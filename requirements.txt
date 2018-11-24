@@ -1,0 +1,4 @@
+Flask>=0.12.2
+psutil>=5.4.3
+gunicorn>=19.7.1
+Flask-Bootstrap>=3.3.7.1

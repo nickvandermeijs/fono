@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{# centering solution found from https://stackoverflow.com/questions/9853815/how-to-center-btn-group-from-twitter-bootstrap #}
+<p> </p>
+<div class="container text-center">
+<div class="row justify-content-center">
+  <div class="col-sm-4" > </div>
+  <div class="col-sm-4" >
+    <div class="btn-group-vertical">
+      {% for station in stations %}
+          {% if station[2] == ">" %}
+	  <p><input type="button" class="btn btn-success btn-block active" 
+			 value="{{ station[1] }}" onclick="location.href = '{{ station[0] }}';"></p>
+          {% else %}
+	  <p><input type="button" class="btn btn-primary btn-block"
+         	value="{{ station[1] }}" onclick="location.href = '{{ station[0] }}';"></p>
+          {% endif %}
+      {% endfor %}
+    </div>
+  </div> 
+  <div class="col-sm-4" > </div>
+</div>
+
+{% endblock %}
